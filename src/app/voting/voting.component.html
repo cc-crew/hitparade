@@ -1,4 +1,4 @@
-<div class="container" style="height: 80%">
+<div class="container" style="">
   <div style="padding: 30px">
     <div *ngIf="mailNotSent" class="alert alert-warning" role="alert" style="text-align: center">
       Fehler beim Senden
@@ -26,23 +26,62 @@
                      formControlName="email" required>
             </label>
             <small id="emailHelp" class="form-text text-muted">
-              EMAIL
+              Deine E-Mail-Adresse wird nicht weitergeben und nur zur Gewinnverlosung verwendet
             </small>
           </div>
-          <div class="form-group" style="display: grid">
-            <label>Name</label>
+          <div style="display: flex; width: 100%">
+            <div class="form-group" style="display: grid; width: 100%">
+            <label>Interpret</label>
             <label>
               <input type="text" class="form-control" name="fullname"
                      placeholder="Name"
                      formControlName="fullname" required>
             </label>
           </div>
-          <div class="form-group" style="display: grid">
-            <label>Nachricht</label>
-            <label>
-            <textarea class="form-control" formControlName="comment" name="comment">
-            </textarea>
-            </label>
+            <div class="form-group" style="display: grid; width: 100%">
+              <label>Titel</label>
+              <label>
+                <input type="text" class="form-control" name="fullname"
+                       placeholder="Name"
+                       formControlName="fullname" required>
+              </label>
+            </div>
+          </div>
+          <div style="display: flex; width: 100%">
+            <div class="form-group" style="display: grid; width: 100%">
+              <label>Interpret</label>
+              <label>
+                <input type="text" class="form-control" name="fullname"
+                       placeholder="Name"
+                       formControlName="fullname" required>
+              </label>
+            </div>
+            <div class="form-group" style="display: grid; width: 100%">
+              <label>Titel</label>
+              <label>
+                <input type="text" class="form-control" name="fullname"
+                       placeholder="Name"
+                       formControlName="fullname" required>
+              </label>
+            </div>
+          </div>
+          <div style="display: flex; width: 100%">
+            <div class="form-group" style="display: grid; width: 100%">
+              <label>Interpret</label>
+              <label>
+                <input type="text" class="form-control" name="fullname"
+                       placeholder="Name"
+                       formControlName="fullname" required>
+              </label>
+            </div>
+            <div class="form-group" style="display: grid; width: 100%">
+              <label>Titel</label>
+              <label>
+                <input type="text" class="form-control" name="fullname"
+                       placeholder="Name"
+                       formControlName="fullname" required>
+              </label>
+            </div>
           </div>
           <button *ngIf="!isLoading" type="submit" class="btn-submit"
           >Senden</button>
@@ -53,8 +92,5 @@
 
 </div>
 
-<div class="footer">
 
-  Footer
-</div>
 
