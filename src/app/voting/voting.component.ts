@@ -1,6 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Subscription} from 'rxjs';
+import {MailService} from './mail.service';
+
+class MailBodyModel {
+  email: string | undefined;
+  title1: string | undefined;
+  interpret1: string | undefined;
+  title2: string| undefined;
+  interpret2: string| undefined;
+  title3: string| undefined;
+  interpret3: string| undefined;
+}
 
 @Component({
   selector: 'app-voting',
@@ -17,11 +28,16 @@ export class VotingComponent implements OnInit {
   invalidCredentials: any;
   mailNotSent: any;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private mailService: MailService) {
     this.form = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      fullname: ['', Validators.required],
-      comment: ['']
+      interpret1: ['', Validators.required],
+      title1: ['', Validators.required],
+      interpret2: [''],
+      title2: [''],
+      interpret3: [''],
+      title3: [''],
+
     });
   }
 
@@ -30,13 +46,18 @@ export class VotingComponent implements OnInit {
 
   sendMessage(): void {
     if (this.form.valid) {
-/*      const body: MailBodyModel = {
+      const body: MailBodyModel = {
         email: this.form.value.email,
-        messageText: this.form.value.comment,
-        name: this.form.value.fullname
+        title1: this.form.value.title1,
+        interpret1: this.form.value.interpret1,
+        title2: this.form.value.title2,
+        interpret2: this.form.value.interpret2,
+        title3: this.form.value.title3,
+        interpret3: this.form.value.interpret3,
       };
+      console.log(body);
       this.isLoading = true;
-      this.subscriptions.push(this.mailService.sendMails(body).subscribe((res) => {
+      this.subscriptions.push(this.mailService.sendVoting(body).subscribe((res) => {
         if (res.status === 200) {
           this.mailIsSent = true;
           this.isLoading = false;
@@ -47,7 +68,7 @@ export class VotingComponent implements OnInit {
           this.mailNotSent = true;
           this.isLoading = false;
         }
-      }));*/
+      }));
     } else {
       this.invalidCredentials = true;
       setTimeout(() => {

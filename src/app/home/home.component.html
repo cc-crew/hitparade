@@ -1,27 +1,39 @@
 <div class="container" style=" display: grid">
   <div style="padding: 30px; text-align: center;">
-    <h2 style="margin-bottom: 70px">Das CCC-Hitparädle</h2>
+    <h2 style="margin-bottom: 10px">Willkommen beim CCC-Hitparädle!</h2>
+    <img style="width: 120px"
+         [src]="'./assets/hea.png'"/>
+    <p>
+      Bald gibt's was auf die Ohren :)
+    </p>
     <p>
       Hier könnt Ihr euer Radioprogramm bestimmen.
     </p>
     <p>
-      <u>Hier</u> könnt ihr abstimmen und wir werten aus, welche Lieder eure Top 15 sind.
+      Stimmt jetzt für eure 3 Lieblingslieder und wir werten aus, welche Lieder eure Top 15 sind.
     </p>
     <p>
-      Diese werden dann im März an folgenden Tagen auf Radio StHörfunk (online Radio) gespielt.
+      Diese werden dann im März an folgenden Tagen auf Radio StHörfunk (online Radio) gespielt:
     </p>
-    <div style="margin-top: 12vh;">
+    <div style="margin-top: 15px">
       <p>
-        <a target="_blank" href="http://www.sthoerfunk.de/">Hier findet ihr die Seite von Radio StHörfunk.</a>
+        <u>
+          <a style="color: #85ad6e;" target="_blank" href="http://www.sthoerfunk.de/sf-player.php">Hier kommt ihr direkt zum online Radio</a>
+        </u>
+
       </p>
       <p>
-        <a target="_blank" href="http://www.sthoerfunk.de/sf-player.php">Und hier kommt ihr direkt zum online Radio.</a>
+        <u>
+          <a style="color: #85ad6e;" target="_blank" href="http://www.sthoerfunk.de/">Hier findet ihr die Seite von Radio StHörfunk, schaut doch mal vorbei</a>
+        </u>
       </p>
     </div>
-
+    <h4 style="margin-top: 60px">
+      Danke für die Teilnahme, euer CCC-Team.
+    </h4>
   </div>
   <div style="text-align: center;">
-    <button type="submit" class="btn-submit">Zur Abstimmung</button>
+    <button type="submit" class="btn-submit" (click)="redirectToVoting()">Zur Abstimmung</button>
   </div>
 </div>
 

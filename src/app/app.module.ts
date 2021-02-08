@@ -7,6 +7,9 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { VotingComponent } from './voting/voting.component';
+import {MailService} from './voting/mail.service';
+import {HttpClientModule} from '@angular/common/http';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -17,10 +20,12 @@ import { VotingComponent } from './voting/voting.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     NgbModule,
+    MatProgressSpinnerModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [MailService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,25 +4,27 @@
       Fehler beim Senden
     </div>
     <div *ngIf="invalidCredentials" class="alert alert-secondary" role="alert" style="text-align: center">
-      Ungültige Angaben
+      Fehlende Informationen, bitte E-Mail-Adresse und mind. einen Interpreten/ Titel angeben.
     </div>
     <div *ngIf="mailIsSent" class="alert alert-secondary" role="alert" style="text-align: center">
-      Senden
+      Vielen Dank für deine Teilnahme!
     </div>
     <h2 class="header1">
-      Header
+      Was sind deine Lieblingssongs?
     </h2>
     <h2 class="header2">
-      Nachricht
+      <u>
+        <a style="color: #85ad6e;" target="_blank" href="http://www.sthoerfunk.de/sf-player.php">Hier kommt ihr direkt zum online Radio</a>
+      </u>
     </h2>
     <div class="row">
       <div class="col-md-6 offset-md-3">
         <form [formGroup]="form" (ngSubmit)="sendMessage()" (keydown.enter)="sendMessage()">
           <div class="form-group" style="display: grid">
-            <label> MAIL </label>
+            <label> E-Mail Adresse (benötigt)</label>
             <label>
               <input type="email" class="form-control" name="email" aria-describedby="emailHelp"
-                     placeholder="EMAIL"
+                     placeholder="E-Mail"
                      formControlName="email" required>
             </label>
             <small id="emailHelp" class="form-text text-muted">
@@ -31,60 +33,59 @@
           </div>
           <div style="display: flex; width: 100%">
             <div class="form-group" style="display: grid; width: 100%">
-            <label>Interpret</label>
-            <label>
-              <input type="text" class="form-control" name="fullname"
-                     placeholder="Name"
-                     formControlName="fullname" required>
+            <label>Interpret (benötigt)</label>
+            <label style="margin-right: 10px;">
+              <input type="text" class="form-control" name="interpret1"
+                     placeholder="Interpret"
+                     formControlName="interpret1" required>
             </label>
           </div>
             <div class="form-group" style="display: grid; width: 100%">
-              <label>Titel</label>
+              <label>Titel (benötigt)</label>
               <label>
-                <input type="text" class="form-control" name="fullname"
-                       placeholder="Name"
-                       formControlName="fullname" required>
+                <input type="text" class="form-control" name="title1"
+                       placeholder="Titel"
+                       formControlName="title1" required>
               </label>
             </div>
           </div>
           <div style="display: flex; width: 100%">
             <div class="form-group" style="display: grid; width: 100%">
               <label>Interpret</label>
-              <label>
-                <input type="text" class="form-control" name="fullname"
-                       placeholder="Name"
-                       formControlName="fullname" required>
+              <label style="margin-right: 10px;">
+                <input type="text" class="form-control" name="interpret2"
+                       placeholder="Interpret" formControlName="interpret2">
               </label>
             </div>
             <div class="form-group" style="display: grid; width: 100%">
               <label>Titel</label>
               <label>
-                <input type="text" class="form-control" name="fullname"
-                       placeholder="Name"
-                       formControlName="fullname" required>
+                <input type="text" class="form-control" name="title2"
+                       placeholder="Titel" formControlName="title2">
               </label>
             </div>
           </div>
           <div style="display: flex; width: 100%">
             <div class="form-group" style="display: grid; width: 100%">
               <label>Interpret</label>
-              <label>
-                <input type="text" class="form-control" name="fullname"
-                       placeholder="Name"
-                       formControlName="fullname" required>
+              <label style="margin-right: 10px;">
+                <input type="text" class="form-control" name="interpret3"
+                       placeholder="Interpret" formControlName="interpret3">
               </label>
             </div>
             <div class="form-group" style="display: grid; width: 100%">
               <label>Titel</label>
               <label>
-                <input type="text" class="form-control" name="fullname"
-                       placeholder="Name"
-                       formControlName="fullname" required>
+                <input type="text" class="form-control" name="title3"
+                       placeholder="Titel" formControlName="title3">
               </label>
             </div>
           </div>
           <button *ngIf="!isLoading" type="submit" class="btn-submit"
-          >Senden</button>
+          >Abstimmen</button>
+          <div *ngIf="isLoading" class="spinner-container">
+            <mat-spinner></mat-spinner>
+          </div>
         </form>
       </div>
     </div>
