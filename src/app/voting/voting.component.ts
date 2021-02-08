@@ -55,7 +55,6 @@ export class VotingComponent implements OnInit {
         title3: this.form.value.title3,
         interpret3: this.form.value.interpret3,
       };
-      console.log(body);
       this.isLoading = true;
       this.subscriptions.push(this.mailService.sendVoting(body).subscribe((res) => {
         if (res.status === 200) {
