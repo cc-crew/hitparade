@@ -5,6 +5,7 @@ import {MailService} from './mail.service';
 
 class MailBodyModel {
   email: string | undefined;
+  fullName: string| undefined;
   title1: string | undefined;
   interpret1: string | undefined;
   title2: string| undefined;
@@ -31,6 +32,7 @@ export class VotingComponent implements OnInit, OnDestroy {
   constructor(private fb: FormBuilder, private mailService: MailService) {
     this.form = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
+      fullName: ['', Validators.required],
       interpret1: ['', Validators.required],
       title1: ['', Validators.required],
       interpret2: [''],
@@ -48,6 +50,7 @@ export class VotingComponent implements OnInit, OnDestroy {
     if (this.form.valid) {
       const body: MailBodyModel = {
         email: this.form.value.email,
+        fullName: this.form.value.fullName,
         title1: this.form.value.title1,
         interpret1: this.form.value.interpret1,
         title2: this.form.value.title2,
