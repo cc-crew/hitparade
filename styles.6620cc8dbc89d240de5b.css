@@ -1,4 +1,4 @@
-body,html{height:100%}body{background-color:#41463e!important;color:#fff!important;font-family:Montserrat,sans-serif!important}div{line-height:30px!important}.navbar.navbar-expand-lg.navbar-light.bg-light{background:#85ad6e!important}.nav-link{color:#2f372e!important}.nav-link.selected{color:#161d12!important;font-weight:700!important;text-decoration:underline!important}p{font-size:20px}
+body,html{height:100%}body{background-color:#41463e!important;color:#fff!important;font-family:Montserrat,sans-serif!important}div{line-height:30px!important}.navbar.navbar-expand-lg.navbar-light.bg-light{background:#85ad6e!important}.nav-link{color:#2f372e!important}.nav-link.selected{color:#161d12!important;font-weight:700!important;text-decoration:underline!important}p{font-size:20px}.spinner-container{left:0;right:0;top:0;bottom:0;position:absolute;display:flex;justify-content:center;align-items:center}.spinner-container mat-spinner,.spinner-container mat-spinner svg{width:60px!important;height:60px!important}.spinner-container mat-spinner svg circle{stroke:#85ad6e!important}
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
