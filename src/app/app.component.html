@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <img style="width: 12.5vw; min-width: 121px; cursor: pointer;" class="navbar-brand"
+         [src]="'./assets/logo/logo2.png'"
+         (click)="refresh()"/>
+    <button class="navbar-toggler" type="button" (click)="isCollapsed =!isCollapsed"
+            data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav" [ngbCollapse]="isCollapsed"
+         (click)="isCollapsed = !isCollapsed">
+      <ul class="navbar-nav" style="width: 100%">
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/home" routerLinkActive="selected" aria-current="page" href="#">
+            Informationen
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/voting" routerLinkActive="selected" aria-current="page" href="#">
+            Abstimmung</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>

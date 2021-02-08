@@ -1,0 +1,60 @@
+<div class="container" style="height: 80%">
+  <div style="padding: 30px">
+    <div *ngIf="mailNotSent" class="alert alert-warning" role="alert" style="text-align: center">
+      Fehler beim Senden
+    </div>
+    <div *ngIf="invalidCredentials" class="alert alert-secondary" role="alert" style="text-align: center">
+      Ungültige Angaben
+    </div>
+    <div *ngIf="mailIsSent" class="alert alert-secondary" role="alert" style="text-align: center">
+      Senden
+    </div>
+    <h2 class="header1">
+      Header
+    </h2>
+    <h2 class="header2">
+      Nachricht
+    </h2>
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <form [formGroup]="form" (ngSubmit)="sendMessage()" (keydown.enter)="sendMessage()">
+          <div class="form-group" style="display: grid">
+            <label> MAIL </label>
+            <label>
+              <input type="email" class="form-control" name="email" aria-describedby="emailHelp"
+                     placeholder="EMAIL"
+                     formControlName="email" required>
+            </label>
+            <small id="emailHelp" class="form-text text-muted">
+              EMAIL
+            </small>
+          </div>
+          <div class="form-group" style="display: grid">
+            <label>Name</label>
+            <label>
+              <input type="text" class="form-control" name="fullname"
+                     placeholder="Name"
+                     formControlName="fullname" required>
+            </label>
+          </div>
+          <div class="form-group" style="display: grid">
+            <label>Nachricht</label>
+            <label>
+            <textarea class="form-control" formControlName="comment" name="comment">
+            </textarea>
+            </label>
+          </div>
+          <button *ngIf="!isLoading" type="submit" class="btn-submit"
+          >Senden</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+
+  Footer
+</div>
+
