@@ -63,9 +63,9 @@ export class VotingComponent implements OnInit, OnDestroy {
         if (res.status === 200) {
           this.mailIsSent = true;
           this.isLoading = false;
-          setTimeout(() => {
+/*          setTimeout(() => {
             this.mailIsSent = false;
-          }, 3000);
+          }, 3000);*/
         } else {
           this.mailNotSent = true;
           this.isLoading = false;
